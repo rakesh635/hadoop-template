@@ -32,7 +32,7 @@ jobs:
       # Setup JDK       
       - uses: actions/setup-java@v2
         with:
-          java-version: '11'
+          java-version: '8'
           distribution: 'adopt'          
           
       # Runs a set of commands using the runners shell
