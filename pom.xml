@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Hadoop</groupId>
-  <artifactId>Hadoop-First-Job</artifactId>
+  <artifactId>Hadoop-template</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
-  <name>Hadoop-First-Job</name>
+  <name>Hadoop-template</name>
   <url>http://maven.apache.org</url>
   <build>
     <plugins>
