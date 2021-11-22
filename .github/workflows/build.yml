@@ -48,15 +48,10 @@ jobs:
       # Build maven project and generate jar
       - name: Build project with maven
         run: mvn clean install
-          
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
+
+      - uses: actions/upload-artifact@v2
         with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+          name: upload mapreduce jar
+          path: /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar
+
       
-      - name: Adding Known Hosts
-        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-        
-      - name: Deploy with rsync
-        run: rsync -avz /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home        
