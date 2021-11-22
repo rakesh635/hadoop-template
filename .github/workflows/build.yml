@@ -67,8 +67,8 @@ jobs:
           path: /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar
           
       - name: Deploy
-        run: |-
-          gcloud compute scp --project="hadoop-331916" --zone="us-central1-c" --recurse /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-test1-m:~/
+        run: |-          
+          gcloud compute copy-files /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-test1-m:~/ --zone "us-central1-c" "cluster-test1-m"
 
 
       
