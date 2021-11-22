@@ -68,6 +68,6 @@ jobs:
           
       - name: Deploy
         run: |-
-          gcloud beta compute ssh --zone "us-central1-c" "cluster-test1-m"  --project "hadoop-331916"
+          gcloud compute ssh --zone "us-central1-c" "cluster-test1-m"  --project "hadoop-331916" --command="./hello.sh"
 
       
