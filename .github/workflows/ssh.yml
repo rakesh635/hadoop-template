@@ -37,6 +37,6 @@ jobs:
       - name: Deploy
         run: |-
           gcloud compute ssh --zone "us-central1-c" "cluster-test1-m"  --project "hadoop-331916" --command="pwd"
-          gcloud compute scp '/home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar shubhamkarmwal08@cluster-test1-m:"/home/shubhamkarmwal08/"'
+          gcloud compute scp --project="hadoop-331916" --zone="us-central1-c" --recurse /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-test1-m:~/home/shubhamkarnwal08
 
       
