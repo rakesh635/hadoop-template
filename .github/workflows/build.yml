@@ -53,5 +53,14 @@ jobs:
         with:
           name: upload mapreduce jar
           path: /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar
+          
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: shubhamkarnwal08
+          key: ${{ secrets.KEY_ED25519 }}
+          port: 22
+          script: sh hello.sh
 
       
