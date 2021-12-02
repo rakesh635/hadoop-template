@@ -1,7 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-
 name: Hadoop CI Job
-
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -69,6 +67,3 @@ jobs:
       - name: Deploy
         run: |-          
           gcloud compute copy-files /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-test1-m:~/ --zone "us-central1-c"
-
-
-      
