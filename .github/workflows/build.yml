@@ -59,11 +59,19 @@ jobs:
       - name: Build project with maven
         run: mvn clean install
 
-      - uses: actions/upload-artifact@v2
+      # Upload build artifacts to github artifactory
+      - name: Upload build artifacts to github artifactory
+        uses: actions/upload-artifact@v2
         with:
           name: upload mapreduce jar
           path: /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar
-          
-      - name: Deploy
+
+      # Deploy build artifacts to hadoop cluster
+      - name: Deploy build artifacts to hadoop cluster
         run: |-          
           gcloud compute copy-files /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-test1-m:~/ --zone "us-central1-c"
+
+      # Hadoop Job Execution
+      - name: Hadoop Job Execution
+        run: |-          
+          gcloud compute ssh --zone "us-central1-c" -- './home/shubhamkarnwal08/hadoop-job.sh'
