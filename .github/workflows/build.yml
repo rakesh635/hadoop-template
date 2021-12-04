@@ -74,4 +74,4 @@ jobs:
       # Hadoop Job Execution
       - name: Hadoop Job Execution
         run: |-          
-          gcloud compute ssh cluster-test1-m --zone=us-central1-c --command="./home/shubhamkarnwal08/hadoop-job.sh"
+          gcloud compute ssh cluster-test1-m --zone=us-central1-c --command="/home/shubhamkarnwal08/hadoop-job.sh"
