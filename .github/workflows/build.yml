@@ -69,7 +69,7 @@ jobs:
       # Deploy build artifacts to hadoop cluster
       - name: Deploy build artifacts to hadoop cluster
         run: |-          
-          gcloud compute copy-files /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-9abc:~/ --zone "us-central1-c"
+          gcloud compute copy-files /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-9abc-m:~/ --zone "us-central1-c"
 
       # Hadoop Job Execution
       - name: Hadoop Job Execution
