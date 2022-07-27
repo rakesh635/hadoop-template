@@ -37,6 +37,6 @@ jobs:
       - name: Deploy
         run: |-
           gcloud compute ssh --zone "us-central1-a" "cluster-9abc-m"  --project "shaped-kite-353908" --command="pwd"
-          gcloud compute scp --project="shaped-kite-353908" --zone="us-central1-a" --recurse /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-test1-m:~/home/shubhamkarnwal08
+          gcloud compute scp --project="shaped-kite-353908" --zone="us-central1-a" --recurse /home/runner/work/hadoop-template/hadoop-template/target/Hadoop-template-1.0.jar cluster-9abc:~/home/shubhamkarnwal08
 
       
